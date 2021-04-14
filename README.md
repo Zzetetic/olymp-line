@@ -1,7 +1,16 @@
 # olymp-line
-MyApp Does Amazing Things!
 
-## Installation
+Дана олимпиадная задача.
+
+```
+Задана полоска длиной 2k клеток и шириной в одну клетку. Полоску сгибают пополам так, чтобы правая половинка оказалась под левой. Сгибание продолжают до тех пор, пока сверху находится больше одной клетки. Необходимо пронумеровать клетки таким образом, чтобы после окончания сгибания полосы номера клеток в получившейся колонке были расположены в порядке 1,2,3,4,...,2k.
+```
+
+Данная программа ее решает с использованним фреймворка приложений командной строки `cement` и библиотеки интренализации `gettext`.
+
+Программа упаковывается в пакет для распространения.
+
+## Установка
 
 ```
 $ pip install -r requirements.txt
@@ -9,36 +18,36 @@ $ pip install -r requirements.txt
 $ pip install setup.py
 ```
 
-## Development
+## Разработка
 
-This project includes a number of helpers in the `Makefile` to streamline common development tasks.
+Этот проект включает набор вспомогательных команд в `Makefile` для автоматизации общих задач разработки.
 
-### Environment Setup
+### Настройка окружени
 
-The following demonstrates setting up and working with a development environment:
+Следующий текст демонстрирует настройку окружения для разработки и работу с ним:
 
 ```
-### create a virtualenv for development
+### Создание виртуального окружени `venv` для разработки
 
-$ make virtualenv
+$ make venv
 
 $ source env/bin/activate
 
+возможны ошибки из за строки `env/bin/pip install -r requirements-dev.txt` в Makefile` закоментируйте ее с помощью `#` и установите необходимые зависимости в ручную
 
-### run line cli application
+### Запуск olymp-line приложения командной строки
 
 $ line --help
 
-
-### run pytest / coverage
+### Запуск юнит тестов
 
 $ make test
 ```
 
 
-### Releasing to PyPi
+### Релиз на PyPi
 
-Before releasing to PyPi, you must configure your login credentials:
+Перед релизом на PyPi, вы должны, указать реквизиты для работы с PyPI:
 
 **~/.pypirc**:
 
@@ -47,8 +56,7 @@ Before releasing to PyPi, you must configure your login credentials:
 username = YOUR_USERNAME
 password = YOUR_PASSWORD
 ```
-
-Then use the included helper function via the `Makefile`:
+Затем используйте вспомогательные команды из `Makefile`:
 
 ```
 $ make dist
@@ -56,15 +64,15 @@ $ make dist
 $ make dist-upload
 ```
 
-## Deployments
+## Развертывание
 
 ### Docker
 
-Included is a basic `Dockerfile` for building and distributing `Line`,
-and can be built with the included `make` helper:
+Включен базовый `Dockerfile` для сборки и распространения `olymp-line`,
+и может быть построен с использованием вспомогательной команды из `Makefile`:
 
 ```
 $ make docker
 
-$ docker run -it line --help
+$ docker run -it olymp-line --help
 ```
