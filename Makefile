@@ -13,7 +13,7 @@ venv:
 	@echo
 
 test:
-	@PYTHONPATH=PYTHONPATH:$(shell pwd)/sort python3 -m unittest \
+	@PYTHONPATH=PYTHONPATH:$(shell pwd)/line python3 -m unittest \
 		-v \
 		$(arg)
 
