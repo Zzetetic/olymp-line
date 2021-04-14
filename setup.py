@@ -23,6 +23,6 @@ setup(
     include_package_data=True,
     entry_points="""
         [console_scripts]
-        line = line.main:main
+        olymp-line = line.main:main
     """,
 )
