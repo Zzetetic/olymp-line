@@ -1,12 +1,22 @@
+import gettext
+import builtins
+import pkg_resources
+
+gettext.bindtextdomain('line', pkg_resources.resource_filename(__name__, "lang"))
+gettext.textdomain("line")
+builtins._= gettext.gettext
 
 from cement import App, TestApp, init_defaults
 from cement.core.exc import CaughtSignal
 from .core.exc import MyAppError
 from .controllers.base import Base
 
+
+
+
 # configuration defaults
 CONFIG = init_defaults('line')
-CONFIG['line']['foo'] = 'bar'
+#CONFIG['line']['foo'] = 'bar'
 
 
 class MyApp(App):
