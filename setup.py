@@ -19,7 +19,7 @@ setup(
     url='https://github.com/johndoe/myapp/',
     license='unlicensed',
     packages=find_packages(exclude=['ez_setup', 'tests*']),
-    package_data={'line': ['templates/*']},
+    package_data={'line': ['templates/*', 'lang/*/*/*.mo', 'lang/*/*/*.po']},
     include_package_data=True,
     entry_points="""
         [console_scripts]

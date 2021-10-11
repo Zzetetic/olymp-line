@@ -18,7 +18,7 @@ class Base(Controller):
         description = _('App is calculated inital state of tape')
 
         # text displayed at the bottom of --help output
-        epilog = _('Usage') + (': olymp-line command1 --foo bar')
+        epilog = _('Usage') + (': olymp-line istate -l 1 2 3 4')
 
         # controller level arguments. ex: 'line --version'
         arguments = [

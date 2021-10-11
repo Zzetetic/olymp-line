@@ -1,9 +1,14 @@
+from importlib import resources
 import gettext
 import builtins
-import pkg_resources
 
-gettext.bindtextdomain('line', pkg_resources.resource_filename(__name__, "lang"))
-gettext.textdomain("line")
+__file__
+
+with resources.path('line', 'lang') as locale_path:
+    lang = locale_path
+    gettext.bindtextdomain('line', lang)
+    gettext.textdomain("line")
+
 builtins._= gettext.gettext
 
 from cement import App, TestApp, init_defaults
